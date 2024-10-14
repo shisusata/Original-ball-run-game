@@ -6,6 +6,12 @@ TagManager:
   tags:
   - enemy
   - next
+  - red
+  - next2
+  - -point
+  - out
+  - special
+  - next3
   layers:
   - Default
   - TransparentFX
