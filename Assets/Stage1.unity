@@ -1331,6 +1331,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stage: {fileID: 1588136214}
+  jumpHeight: 7
+  jumpSpeed: 10
+  gravity: -30
 --- !u!114 &1217884909
 MonoBehaviour:
   m_ObjectHideFlags: 0

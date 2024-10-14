@@ -40,7 +40,7 @@ public class player : MonoBehaviour
         {
             rb.AddForce(new Vector3(-30, 0, 0));
         }
-        if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
+        if (Input.GetKeyDown(KeyCode.Space) && !isJumping)//! = not
         {
             isJumping = true;
             initialY = transform.position.y;
