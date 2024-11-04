@@ -116,6 +116,16 @@ public class player : MonoBehaviour
         {
             if (score >= 60)
             {
+                SceneManager.LoadScene("Clear 2");
+            }
+            else
+               if (score >= 70)
+            {
+                SceneManager.LoadScene("Clear 1");
+            }
+            else
+            if (score >= 80)
+            {
                 SceneManager.LoadScene("Clear");
             }
             else

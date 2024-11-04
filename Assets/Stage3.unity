@@ -4115,7 +4115,7 @@ MonoBehaviour:
   stage: {fileID: 1942739323}
   jumpHeight: 7
   jumpSpeed: 10
-  gravity: -30
+  gravity: -50
 --- !u!114 &1217884909
 MonoBehaviour:
   m_ObjectHideFlags: 0
