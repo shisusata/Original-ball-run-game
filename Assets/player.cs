@@ -13,8 +13,12 @@ public class player : MonoBehaviour
     public Text stage;
     public float jumpHeight = 2.0f;    // ジャンプの高さ
     public float jumpSpeed = 2.0f;     // ジャンプの速さ
-    public float gravity = -9.8f;      // 重力の強さ
-
+    public float gravity = -9.8f;  //重力の強さ
+    AudioSource audio;
+    public AudioClip bad;
+    public AudioClip nomal;
+    
+    
 
     private bool isJumping = false;    // ジャンプ中かどうかの判定
     private float initialY;            // ジャンプ開始時のY座標
@@ -27,6 +31,7 @@ public class player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -72,9 +77,9 @@ public class player : MonoBehaviour
         {
             Destroy(other.gameObject);
             score++;
-           
+            audio.PlayOneShot(nomal);
 
-            Debug.Log("aaa");
+            
 
 
         }
@@ -83,7 +88,7 @@ public class player : MonoBehaviour
             Destroy(other.gameObject);
             score += 3;
 
-
+            audio.PlayOneShot(nomal);
             Debug.Log("aaa");
 
 
@@ -93,7 +98,7 @@ public class player : MonoBehaviour
             Destroy(other.gameObject);
             score += 10;
 
-
+            audio.PlayOneShot(nomal);
 
 
 
@@ -103,6 +108,7 @@ public class player : MonoBehaviour
             Destroy(other.gameObject);
             SceneManager.LoadScene("Stage2");
             stage.text = "Go to stage2 !";
+            
             Invoke("Hakushi", 10);//Invoke( stage.text = "   ",10)
         }
         if (other.gameObject.CompareTag("next2"))
@@ -137,6 +143,7 @@ public class player : MonoBehaviour
         if (other.gameObject.CompareTag("-point"))
         {
             score -= 3;
+            audio.PlayOneShot(bad);
         }
         if (other.gameObject.CompareTag("out"))
         {
